@@ -13,9 +13,10 @@ pipeline {
                 echo "Building..."
                 sh '''
                 echo "Installing packages"
-                pip install -r requirements.txt
-                python -m spacy download en_core_web_sm
-                python -m nltk.downloader words
+                pip install nltk
+                pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz
+                pip install pyresparser
+                python -m nltk.downloader stopwords
                 python --version
                 '''
             }
@@ -24,7 +25,7 @@ pipeline {
             steps {
                 echo "Testing..."
                 sh '''
-                python demo.py
+                python test.py
                 '''
             }
         }
