@@ -13,8 +13,6 @@ pipeline {
                 echo "Building..."
                 sh '''
                 echo "Installing packages"
-                pip install --upgrade pip
-                pip install gcc
                 pip install nltk
                 pip install pyresparser
                 python -m nltk.downloader stopwords
