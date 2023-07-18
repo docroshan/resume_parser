@@ -14,7 +14,7 @@ pipeline {
                 sh '''
                 echo "Installing packages"
                 pip install --upgrade pip
-                sudo apt-get install python3-dev
+                apk add python3-dev
                 pip install nltk
                 pip install pyresparser
                 python -m nltk.downloader stopwords
