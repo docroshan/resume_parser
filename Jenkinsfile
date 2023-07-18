@@ -14,7 +14,7 @@ pipeline {
                 sh '''
                 echo "Installing packages"
                 pip install --upgrade pip
-                apk add gcc
+                pip install gcc
                 pip install nltk
                 pip install pyresparser
                 python -m nltk.downloader stopwords
